@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Love-as-a-Service - Match Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f23665",
+              "background-light": "#fcf8f9",
+              "background-dark": "#221015",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-black dark:border-white/20">
+<div class="text-black dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Love-as-a-Service</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-black dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<div class="text-black dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto pb-28">
+<div class="p-4">
+<div class="border border-black dark:border-white/20 rounded-xl overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Carousel -->
+<div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden snap-x snap-mandatory">
+<div class="flex items-stretch snap-center shrink-0 w-full">
+<div class="flex h-full flex-1 flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover flex flex-col" data-alt="A woman with blonde hair smiling in a sunlit outdoor setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrM5abjy9ogwYddyCoy0RlsigsoWDEu4nNB9TzqH7iTVpWQ-nANNEi8Q1JDfOjUtTS-zp2aP6uYJxuO-ApPPiFMOX431z9rVDcsymCg70aAqz_7vVAiPW6Ip-45J_p0HoVPdbiaeltapjzMPkXCkKK2hemDr8Qzu_vQct0qy9ORWeW_WMi8eTxXk1Uj3A_Vo4aRTErd6u-3pSApqZHh0ovSs6cjZTj5kY6IGdhMUvgGryMguROqqxTUn16JX0r-05-lVZ7iUE73I8");'></div>
+<div class="px-4 pb-4">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Ana, 28</p>
+<p class="text-primary dark:text-primary/80 text-sm font-normal leading-normal">San Francisco, CA</p>
+</div>
+</div>
+</div>
+<div class="flex items-stretch snap-center shrink-0 w-full">
+<div class="flex h-full flex-1 flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover flex flex-col" data-alt="Ana laughing while holding a cup of coffee at a cafe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyh03OoAnt2Ira2sdChYaqDSb6-qJcoqgFbYWZQhV686FIORCYFrb5ZzQTRSVOOkWKYOuFAJIQBYABPiZKX9n2Jw7WH9G-OFRNaSKjv3ImHc29Pac4hqpLoxcyJR8ptZEOq9H70h0A-09R-x58GHZhY5RanFqVJeOtvYbqWleix5WpDFyacbkeMbA1Q9E0wXdVyTm7OVBWdhIoL-V-77NEI5AN53d7hwv9GKm2Ltrxe1Dn24rex-sBDwzZdy0QpxJE33XyMZt5k88");'></div>
+<div class="px-4 pb-4">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Ana, 28</p>
+<p class="text-primary dark:text-primary/80 text-sm font-normal leading-normal">San Francisco, CA</p>
+</div>
+</div>
+</div>
+<div class="flex items-stretch snap-center shrink-0 w-full">
+<div class="flex h-full flex-1 flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover flex flex-col" data-alt="Ana hiking on a mountain trail with a scenic view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjIsLkt-1KEaTfF174VB8a3J8zyeQgbBwVyhJyjUtaNmyAERSv_JNNAD3E_lxh7JAbhOnqa52M9oOvX1Oo6_ta6W9RxJ9k_WolNx7rHFqRblTqpOiPOqqRWkjNnakxFN49X969V0BF80B0R1zo1rTfyqO-4pNM5gGq1oEDTVL4AA1ufEbPlJK71M4DGVTm844BR70L2vMbWJWqj7NjaoZYvy5SyDPAo7RpuSmH96j3K0CGHShtjlNgsTbNGpF0QXd9Ytdtnc30dTU");'></div>
+<div class="px-4 pb-4">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Ana, 28</p>
+<p class="text-primary dark:text-primary/80 text-sm font-normal leading-normal">San Francisco, CA</p>
+</div>
+</div>
+</div>
+</div>
+<!-- "Commit Message" Body Text -->
+<div class="border-t border-black dark:border-white/20">
+<p class="text-black/60 dark:text-white/60 text-xs font-normal leading-normal pt-3 px-4">// Commit Message</p>
+<p class="text-black dark:text-white text-base font-normal leading-normal pb-3 pt-1 px-4">feat: Add new human to the dating pool</p>
+</div>
+<!-- Tech Stack Section -->
+<div class="border-t border-black dark:border-white/20">
+<h3 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Tech Stack</h3>
+<div class="flex gap-2 p-4 pt-1 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">React</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Python</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Node.js</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Docker</p>
+</div>
+</div>
+</div>
+<!-- Project Repos Section -->
+<div class="border-t border-black dark:border-white/20">
+<h3 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Project Repos</h3>
+<div class="flex gap-2 p-4 pt-1 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">repo: backpacking-europe</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">repo: home-brewing</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black dark:border-white/20 px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">repo: competitive-salsa</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark p-4 border-t border-black dark:border-white/20">
+<p class="text-black/60 dark:text-white/60 text-xs font-normal text-center pb-3"> // Review this connection request</p>
+<div class="flex justify-around items-center gap-4">
+<button class="flex size-16 items-center justify-center rounded-full border-2 border-black dark:border-white/20 bg-transparent text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined !text-4xl">close</span>
+</button>
+<button class="flex size-16 items-center justify-center rounded-full border-2 border-black dark:border-white/20 bg-transparent text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined !text-4xl">edit</span>
+</button>
+<button class="flex size-16 items-center justify-center rounded-full border-2 border-black dark:border-white/20 bg-transparent text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined !text-4xl">done</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
