@@ -25,9 +25,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------------------------------------------
-      # 🔥 Generate index.html from ROOT .html files
-      # ---------------------------------------------
       - name: Generate index.html
         shell: bash
         run: |
@@ -42,7 +39,6 @@ jobs:
   <h1>Love-as-a-Service</h1>
   <ul>
 EOF
-
           # Loop only through HTML files in the root directory
           for file in *.html; do
             if [[ "$file" != "index.html" ]]; then
@@ -50,14 +46,13 @@ EOF
               echo "    <li><a href=\"$file\">$name</a></li>" >> index.html
             fi
           done
-
           cat << 'EOF' >> index.html
   </ul>
 </body>
 </html>
 EOF
 
-      - name: Show generated files (debug)
+      - name: Show generated files
         run: ls -la
 
       - name: Setup GitHub Pages
