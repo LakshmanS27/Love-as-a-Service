@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LaaS Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f23665",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221015",
+              "accent-red": "#e96d76",
+              "text-light": "#1c0d11",
+              "text-dark": "#e5e3e3",
+              "text-muted-light": "#9b4b5f",
+              "text-muted-dark": "#a18a91",
+              "border-light": "#1c0d11",
+              "border-dark": "#e5e3e3"
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Fira Code", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .blinking-cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        from, to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex flex-col h-screen max-w-lg mx-auto border-x border-border-light/20 dark:border-border-dark/20">
+<!-- Header Bar -->
+<header class="flex items-center p-4 border-b border-border-light/20 dark:border-border-dark/20 shrink-0">
+<button class="p-2 -ml-2">
+<span class="material-symbols-outlined text-border-light dark:text-border-dark">arrow_back</span>
+</button>
+<div class="flex items-center gap-2 mx-auto">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 border border-border-light dark:border-border-dark" data-alt="Sarah's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4CBirCFjXGAUySo2_JMUx-YpX5P_ajh3oa3IIa7Nf1gv0A8MVqXsfyJFIt9UeOmDMlBWvEgwZfR-0jofjUXcqPQ4u1uJVt6d3IllRQIVgmAKQCCZCKjbx2FIbxt4RuQUxPHXM_XUxSeLRHfKXIpm0c1RF8FLSuWOTx158h91tIVX3V0Zmi9Z7KjWNrkGBD8PR4G1pJbOaLy7RmTv20_J9eIVoqdamG-yqG2BgujGUg7BXAlIMjJeOkLSOez1JxDI3ggbZhFeCc7A");'></div>
+<h1 class="font-mono text-base font-medium text-text-light dark:text-text-dark">match_with_sarah.js</h1>
+</div>
+<button class="p-2 -mr-2">
+<span class="material-symbols-outlined text-border-light dark:text-border-dark">more_vert</span>
+</button>
+</header>
+<!-- Chat Log Area -->
+<main class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- System Message -->
+<p class="font-mono text-sm text-center text-text-muted-light dark:text-text-muted-dark">[INFO] Connection established.</p>
+<!-- Matched User's Message -->
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 border border-border-light dark:border-border-dark" data-alt="Sarah's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAiIafrEKny_fvttkFZBsbeQD94Y-4rc6MdI-inTYoW25bBFji9Za0bP-QyXGanTw--wFxFHwYw8cDt7WYlHWTI74Hbapg5VgKDc3Fv_sEDKhybjQpH2GEYjeADCy_r8WACC5P_ZeUQbePBaZFgpNHIkH7Unh6YiNWwzI0gGducLhNS6wTwOnuPyqctuk6hnPiV9TeWjJ0FHu0LfbJskvH--TSSX2EzWhFkV9u9IrG6dY3lwX6Q_2StwOPHpNJ4ZK1dC6dkSMbMhGY");'></div>
+<div class="flex flex-col gap-1 w-full max-w-[80%]">
+<p class="font-mono text-base leading-relaxed text-text-light dark:text-text-dark">// Hey! I saw you're into Rust. Me too!</p>
+</div>
+</div>
+<!-- Timestamp -->
+<p class="font-mono text-xs text-center text-text-muted-light dark:text-text-muted-dark">[timestamp: 14:02:24] <span class="text-accent-red">♡</span></p>
+<!-- User's Message -->
+<div class="flex items-start justify-end gap-3">
+<div class="flex flex-col gap-1 w-full max-w-[80%]">
+<div class="border border-border-light dark:border-border-dark p-3">
+<p class="font-mono text-base leading-relaxed text-text-light dark:text-text-dark">
+                            /* Awesome! Yeah, I've been working with it for a couple of years now. What kind of projects do you build? */
+                        </p>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 border border-border-light dark:border-border-dark" data-alt="Your profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5BYEuJsUBZm2WcPyypDSEQo5BpZEhEWX-kFK3UPOlpMSy41PYnrggve_BPUzhe4oa0dhAvWMCxGl9odt1F66KdZvnGbb-Sfm9whpSLBaKyOyszLRAI6wWKOAjvCGyLNcjiKRPzSEzpzjf_jfVTZnV0tGpG0mdKoc1hJmwkWxtJPnrhaOmlMJU7jwyh7kdLty5AtPFDbuyWMTrYw0ePTszTK8-nVdDUXR7NQjTSlLJVWKc89eMIZM6GG1zOpKxRKUboQEuxPlGW7E");'></div>
+</div>
+<!-- Timestamp -->
+<p class="font-mono text-xs text-center text-text-muted-light dark:text-text-muted-dark">[timestamp: 14:03:10]</p>
+<!-- Matched User's Message -->
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 border border-border-light dark:border-border-dark" data-alt="Sarah's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChgBjTVwNnJF0EbpcaCHCHS0uAz8oQJSO40Vihct8YV3n_Vp_2p9z2a1Td8f0RXe0HV-dk-5y1536NkmHVSlIssAAgvrHf5G7B_L7WwQttyp-t7y4YZTgbgRetzajE-E0gU19LcY8_jfNQX6xO448a6K6xc-oZVXSUbcHuI2sfMnU0ERwwfSA96oU-jdDmFG0POqXwkG9cySEBItkdaOFrppPyYOEKrAYxmxTaoFkwVbX-0l7kWw52SZx0MOZbSEW7pb3mmTwIpHs");'></div>
+<div class="flex flex-col gap-1 w-full max-w-[80%]">
+<p class="font-mono text-base leading-relaxed text-text-light dark:text-text-dark">// Mostly backend services and some CLI tools. I've been dabbling in WebAssembly with it lately. Super interesting stuff.</p>
+</div>
+</div>
+</main>
+<!-- Message Input Field -->
+<footer class="p-4 border-t border-border-light/20 dark:border-border-dark/20 shrink-0">
+<div class="flex items-center gap-2 border border-border-light dark:border-border-dark p-3">
+<span class="font-mono text-text-muted-light dark:text-text-muted-dark">&gt;</span>
+<input class="flex-1 bg-transparent border-none p-0 focus:ring-0 font-mono text-base text-text-light dark:text-text-dark placeholder:text-text-muted-light/70 dark:placeholder:text-text-muted-dark/70" placeholder="Type your message..." type="text"/>
+<div class="blinking-cursor w-2 h-5 bg-border-light dark:bg-border-dark -ml-1"></div>
+<button class="p-1">
+<span class="material-symbols-outlined text-border-light dark:text-border-dark">play_arrow</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>
