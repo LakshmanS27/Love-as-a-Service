@@ -1,10 +1,9 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]   # Deploy when you push to main
-  workflow_dispatch:      # Allow manual deploys
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,13 +25,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ============================
+      # 🔥 Generate index.html automatically
+      # ============================
+      - name: Generate index.html
+        run: |
+          echo "<!DOCTYPE html>" > index.html
+          echo "<html><head><title>Love-as-a-Service</title></head><body>" >> index.html
+          echo "<h1>Love-as-a-Service</h1><ul>" >> index.html
+
+          # find all HTML files in subfolders
+          find . -type f -name "*.html" | while read file; do
+            # skip the index.html we are generating
+            if [[ "$file" != "./index.html" ]]; then
+              clean_path="${file#./}"
+              name=$(basename "$clean_path" .html)
+              echo "<li><a href=\"$clean_path\">$name</a></li>" >> index.html
+            fi
+          done
+
+          echo "</ul></body></html>" >> index.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload static files
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'    # Deploy **entire repo**, including all folders + HTML files
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
