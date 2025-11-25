@@ -1,25 +1,23 @@
 name: Deploy to GitHub Pages
 
+# Trigger deployment on pushes to main branch
 on:
   push:
     branches:
-      - main  # Deploy whenever you push to main
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./    # root folder contains your index.html
+          publish_dir: ./   # Publish the root folder containing index.html
