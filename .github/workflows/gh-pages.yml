@@ -10,17 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Built-in token for authentication
-          publish_dir: ./                            # Root folder
-          publish_branch: gh-pages                  # Correct input for target branch
-          user_name: github-actions
-          user_email: github-actions@github.com
-          force_orphan: true                        # Optional, clean branch each deploy
+          path: ./
+
+      - name: Publish to GitHub Pages
+        uses: actions/deploy-pages@v1
